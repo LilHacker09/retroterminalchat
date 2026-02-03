@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Terminal Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">▓▒░ RETRO TERMINAL CHAT ░▒▓</div>
+      <div class="status">
+        <span id="username-display">● Connecting...</span>
+        <span id="online-count">Online: 0</span>
+      </div>
+    </div>
+
+    <div class="main">
+      <div id="terminal" class="terminal"></div>
+      <div class="input-section">
+        <div id="input-area" class="input-area">
+          <span class="prompt">$</span>
+          <input 
+            id="message-input" 
+            type="text" 
+            placeholder="Type message or /help for commands..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+        <div id="command-hint" class="command-hint"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="stats">
+        <span>Connected: <span id="connection-time">--:--:--</span></span>
+        <span>Messages: <span id="message-count">0</span></span>
+        <span>Status: <span id="ws-status" class="status-ok">CONNECTED</span></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

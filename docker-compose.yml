@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  retro-chat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: retro-terminal-chat
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:4000:4000"
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
